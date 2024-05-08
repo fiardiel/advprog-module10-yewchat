@@ -169,13 +169,13 @@ impl Component for Chat {
                             self.messages.iter().map(|m| {
                                 let user = self.users.iter().find(|u| u.name == m.from).unwrap();
                                 html!{
-                                    <div class="flex items-end w-3/6 bg-gray-100 m-8 rounded-tl-lg rounded-tr-lg rounded-br-lg ">
+                                    <div class="flex items-end w-3/6 bg-blue-500 m-8 rounded-tl-lg rounded-tr-lg rounded-br-lg ">
                                         <img class="w-8 h-8 rounded-full m-3" src={user.avatar.clone()} alt="avatar"/>
                                         <div class="p-3">
-                                            <div class="text-sm">
+                                            <div class="text-sm text-white">
                                                 {m.from.clone()}
                                             </div>
-                                            <div class="text-xs text-gray-500">
+                                            <div class="text-xs text-white">
                                                 if m.message.ends_with(".gif") {
                                                     <img class="mt-3" src={m.message.clone()}/>
                                                 } else {
